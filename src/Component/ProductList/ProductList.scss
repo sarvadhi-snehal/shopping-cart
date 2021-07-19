@@ -1,0 +1,17 @@
+.productsholder{
+
+    padding: 3rem 0 0 0;
+ margin: 0;
+    .productList{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        & > * {
+            flex : 1 1 18rem;
+        }
+    }
+
+}

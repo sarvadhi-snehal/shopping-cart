@@ -1,0 +1,19 @@
+@mixin flexView($jcontent){
+    display:flex;
+    align-items:center;
+    justify-content:$jcontent;
+}
+header{
+    height:70vh;
+    background-image: linear-gradient(to right,
+                                    rgb(46, 39, 34),
+                                    rgb(137, 18, 2));
+    width: 100%;
+    @include flexView(center);
+    h1{
+       font-size:2.5rem;
+       color:#fff;
+       font-weight:900;
+       letter-spacing:1px;
+    }
+}

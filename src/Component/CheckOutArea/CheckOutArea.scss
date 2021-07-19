@@ -1,0 +1,46 @@
+.checkout-area{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction:column;
+    padding:1rem;
+    table{
+        width: calc(100% - 20%);
+       max-width:38rem;
+       tbody{
+           tr{
+               
+               .boldText{
+                   font-weight: 700;
+                
+               }
+               .bigText{
+                   font-size:1.5rem;
+               }
+           }
+           .paddingTop{
+               td{
+                padding-top: 1.5rem;
+               }
+           
+           }
+           
+       }
+    }
+    button{
+        background-color: #fff;
+        padding:0.5rem;
+        border:1px solid #000;
+        
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
+
+@media (max-width: 630px){
+    .none{
+        display: none;
+    }
+}

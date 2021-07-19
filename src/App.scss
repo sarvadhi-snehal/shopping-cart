@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,400italic,700);
+.App {
+  text-align: center;
+  position: relative;
+  font-family: "Bitter";
+  width:100vw;
+  overflow: hidden;
+} 
+.overlayApp::before {
+  content:"";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  top: 0;
+  left: 0;
+}

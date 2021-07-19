@@ -1,0 +1,69 @@
+$squre: 18rem;
+$minhw: 5rem;
+.product {
+  font-family: "Poppins";
+  margin: 1rem;
+max-width: $squre;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  
+  .img {
+    max-height: $squre;
+    max-width: $squre;
+    min-width: $minhw;
+    min-height: $minhw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s;
+    position: relative;
+
+    img {
+      height: $squre;
+      // width: 100%;
+      margin: 0 auto;
+    }
+    &:hover {
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+  h1 {
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .price {
+    font-size: 1rem;
+    font-weight: 800;
+  }
+  button {
+    padding: 0.5rem;
+    border: 1px solid #000;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.1s;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #000;
+    }
+  }
+  .hoverOver {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 5rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
