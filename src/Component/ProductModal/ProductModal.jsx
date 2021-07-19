@@ -78,6 +78,8 @@ const handlClick = (e) => {
                     zoomSrc={imgSrc}
                     zoomType="hover"
                     zoomPreload={true}
+                   
+            
                   />
                   {"images" in prod ? (
                     <div className="imgArr">

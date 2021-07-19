@@ -13,7 +13,7 @@
   color: #fff;
   justify-content: space-between;
   @include flexView;
- 
+
 
   .value {
     font-size: 2rem;
@@ -30,11 +30,13 @@
     overflow-x: hidden;
     margin: 0 auto;
     transition: all 0.3s;
-    max-width: 30rem;
+  width: 30rem;
+
+  height: calc(100% - 2vh);
     .closeModal {
       position: absolute;
       right: 0;
-      top: 0;
+      top: 1rem;
       background: none;
       border: none;
       padding: 0.5rem;
@@ -52,11 +54,10 @@
       .imgContainer {
         padding: 1rem;
         overflow: hidden;
-    
-     
+   
         .imgArr{
           padding-top: 1rem;
-          width: 100%;
+     
   
         
           left: 0;
@@ -112,7 +113,7 @@
   .modalContainer{
     width: 80%;
     .value {
-   font-size:8rem;
+   font-size:2rem;
    padding:0 .5rem
     }
   }
