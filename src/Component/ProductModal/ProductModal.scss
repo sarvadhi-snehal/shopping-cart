@@ -48,9 +48,6 @@
     }
     .container{
       height:90%;
-
-     
-
       .mainImage {
         @include flexView;
         flex-direction: column;
@@ -67,6 +64,7 @@
           .acImagContainer{
               
             height:10%;
+      
 
           }
           .imgArr{
