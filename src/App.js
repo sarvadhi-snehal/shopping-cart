@@ -1,5 +1,5 @@
 import Header from "./Component/Header/Header";
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer } from "react";
 import "./App.scss";
 import Cart from "./Component/Cart/Cart";
 import ProductList from "./Component/ProductList/ProductList";

@@ -7,6 +7,9 @@
   font-family: "Bitter";
   width:100vw;
   overflow: hidden;
+  button{
+    cursor: pointer;
+  }
 } 
 .overlayApp::before {
   content:"";

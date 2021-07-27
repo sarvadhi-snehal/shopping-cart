@@ -161,7 +161,7 @@ export const reducer = (state, action) => {
       };
       break;
     case "addQty":
-        let nI = state.cart.find((element) => element.sku === action.payload.id);
+        let nI = state.products.find((element) => element.sku === action.payload.id);
        
       if (state.cart.find((element) => element.sku === nI.sku)) {
         let neTotal = nI.price * action.payload.qty;

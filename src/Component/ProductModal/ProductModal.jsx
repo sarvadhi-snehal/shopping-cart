@@ -1,17 +1,33 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState ,useRef,useEffect } from "react";
 import CartContext from "../../globalStore";
 import InnerImageZoom from "react-inner-image-zoom";
+import Zoom from 'react-img-zoom'
 import "./ProductModal.scss";
 import { FaLessThan, FaGreaterThan, FaTimes } from "react-icons/fa";
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 function ProductModal() {
   const [input, setInput] = useState(1);
-  
+  const closeOnClick = useRef();
   const { products, productModalID, dispatch } = useContext(CartContext);
   const im = products.map((element) => {
     return element.image;
   });
-  console.log(im);
 
+  const handleClick = e => {
+    if (closeOnClick.current && !closeOnClick.current.contains(e.target)) {
+      dispatch({ type: "openProductModal" })
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  });
+
+  
 const [proId,setProId] = useState(productModalID);
 const [imgSrc,setImgSrc] = useState(im[productModalID - 1]);
 
@@ -50,7 +66,7 @@ const handlClick = (e) => {
   }
 
   return (
-    <div className="modalContainer">
+    <div className="modalContainer" ref={closeOnClick}>
       <FaLessThan
         className="value"
         name={proId}
@@ -71,16 +87,29 @@ const handlClick = (e) => {
           if (sku === proId) {
       
             return (
-              <div className="mainImage">
+              <div className="container">
+                <div className="mainImage"> 
                 <div className="imgContainer">
-                  <InnerImageZoom className="acImg"
-                    src={imgSrc}
-                    zoomSrc={imgSrc}
-                    zoomType="hover"
-                    zoomPreload={true}
-                   
+                <Zoom
+                img={imgSrc}
+                zoomScale={3}
+                width={300}
+                height={300}
+              /> 
+                 {/* <InnerImageZoom className="acImg"
+                      src={imgSrc}
+                      srcSet
+                      zoomSrc={imgSrc}
+                      zoomType="hover"
+                      zoomPreload={true}
+                      
+                      width={300}
+                
+                    />} */}
+          
+                
             
-                  />
+              
                   {"images" in prod ? (
                     <div className="imgArr">
                       <img src={images[0].image} alt="" onClick={handlClick}/>
@@ -92,13 +121,13 @@ const handlClick = (e) => {
                 </div>
 
                 <h1>{product}</h1>
-                <p>{description}</p>
-                <p>{details}</p>
+                <p >{description}</p>
+                <p className="detail">{details}</p>
                 <h5 className="bigFont">${price.toFixed(2)}</h5>
                 <form className="cartAdd" onSubmit={handleSubmit}>
                   <label for="quntity">QTY</label>
                   <input
-                    type="text"
+                    type="number"
                     name="quntity"
                     id="quntity"
                     value={input}
@@ -111,7 +140,9 @@ const handlClick = (e) => {
                   />
                 </form>
               </div>
-            );
+            
+              </div>
+              );
           }
         })}
       </div>
