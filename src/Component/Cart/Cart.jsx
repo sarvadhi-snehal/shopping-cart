@@ -6,7 +6,7 @@ import CartContext from "../../globalStore";
 import MiniCart from "../MiniCart/MiniCart";
 import { FaPlus, FaMinus, FaTimes } from "react-icons/fa";
 function Cart() {
-  const [isOpen, setisOpen] = useState(false);
+  const [isOpen, setisOpen] = useState(true);
   const { cart, dispatch, total, tax } = useContext(CartContext);
   const handlClick = () => {
     dispatch({ type: "clearCart" });

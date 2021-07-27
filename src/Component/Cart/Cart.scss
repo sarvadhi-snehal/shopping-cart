@@ -18,17 +18,23 @@
   //   width:100%;
   .cartitems {
     width: 100%;
-  
+
+    
+
     .cart {
+      
       display: flex;
-      align-items: center;
-      justify-content: center;
+      
       .btn-ctn{
         display: flex;
         align-items:center;
       }
       div{
         position: relative;
+        display: flex;
+      
+ 
+        
         .delProduct{
           position: absolute;
           top: 25%;
@@ -73,13 +79,7 @@
         }
       }
     }
-    .cart {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      justify-content: space-evenly;
-      padding-bottom: 1rem;
-    }
+   
   }
   span {
     padding: 0 0.5rem;

@@ -1,7 +1,7 @@
 import React, { useContext, useState ,useRef,useEffect } from "react";
 import CartContext from "../../globalStore";
 import InnerImageZoom from "react-inner-image-zoom";
-import Zoom from 'react-img-zoom'
+// import Zoom from 'react-img-zoom'
 import "./ProductModal.scss";
 import { FaLessThan, FaGreaterThan, FaTimes } from "react-icons/fa";
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
@@ -90,13 +90,13 @@ const handlClick = (e) => {
               <div className="container">
                 <div className="mainImage"> 
                 <div className="imgContainer">
-                <Zoom
+                {/* <Zoom
                 img={imgSrc}
                 zoomScale={3}
                 width={300}
                 height={300}
-              /> 
-                 {/* <InnerImageZoom className="acImg"
+              />  */}
+                 <InnerImageZoom className="acImg"
                       src={imgSrc}
                       srcSet
                       zoomSrc={imgSrc}
@@ -105,7 +105,7 @@ const handlClick = (e) => {
                       
                       width={300}
                 
-                    />} */}
+                    />
           
                 
             
